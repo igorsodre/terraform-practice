@@ -26,5 +26,6 @@ stages:
         repository: 'igorsodre/terraform-practice'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+        buildContext: .
         tags: |
           $(tag)
