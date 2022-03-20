@@ -2,6 +2,15 @@ provider "azurerm" {
   features {}
 }
 
+terraform {
+  backend "azurerm" {
+    resource_group_name = "tf_rs_blobstore"
+    storage_account_name = "tfstorageigorsodre"
+    container_name = "tfstate"
+    key = "terraform.tfstate"
+  }
+}
+
 resource "azurerm_resource_group" "tf_test" {
   location = "Brazil South"
   name     = "tfmainrg"
